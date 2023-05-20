@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="module"
+      src="https://cdn.what3words.com/javascript-components@4.1.0-alpha.12/dist/what3words/what3words.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.what3words.com/javascript-components@4.1.0-alpha.12/dist/what3words/what3words.js"
+    ></script>
+    <style>
+      #map {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <what3words-map
+      id="w3w-map"
+      api_key="46XEWS6B"
+      map_api_key="AIzaSyA5F6RN_yrV5QH3UzsGCET4ORHNJEwPUBA"
+      zoom="8"
+      selected_zoom="20"
+      lng="-0.195521"
+      lat="51.520847"
+      search_control_position="2"
+      map_type_control
+      zoom_control
+      fullscreen_control
+      fullscreen_control_position="3"
+      current_location_control_position="9"
+      disable_default_ui
+      map_type_id="satellite"
+      words="filled.count.soap"
+      provider="google"
+    >
+      <div slot="map" id="map"></div>
+      <div slot="search-control">
+        <what3words-autosuggest>
+          <input type="text" placeholder="e.g. ///filled.count.soap" />
+        </what3words-autosuggest>
+      </div>
+    </what3words-map>
+  </body>
+  <script>
+    document
+      .getElementById("w3w-map")
+      .addEventListener("selected_square", console.log);
+  </script>
+</html>
